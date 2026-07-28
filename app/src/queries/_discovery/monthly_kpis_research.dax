@@ -1,0 +1,12 @@
+EVALUATE
+SUMMARIZECOLUMNS (
+    dim_month[YearMonth],
+    "Cost", [Total Effective Cost],
+    "Billed", [Total Billed Cost],
+    "List", [Total List Cost],
+    "SavingsAmt", [Total Savings],
+    "ResourceCount", [Resource Count],
+    "UntaggedResourceCount", [Untagged Resource Count],
+    "TaggedApps", [Tagged Application Count]
+)
+ORDER BY dim_month[YearMonth] ASC

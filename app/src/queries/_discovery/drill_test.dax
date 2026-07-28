@@ -1,0 +1,15 @@
+DEFINE
+    VAR _prevStart = DATE ( 2026, 5, 1 )
+    VAR _prevEnd = EOMONTH ( DATE ( 2026, 5, 1 ), 0 )
+    VAR _curStart = DATE ( 2026, 6, 1 )
+    VAR _curEnd = EOMONTH ( DATE ( 2026, 6, 1 ), 0 )
+EVALUATE
+SUMMARIZECOLUMNS (
+    focus_partitioned[ServiceName],
+    FILTER ( ALL ( focus_partitioned[ServiceCategory] ), focus_partitioned[ServiceCategory] = "Analytics" ),
+    "PrevCost", CALCULATE ( [FX Effective Cost], DATESBETWEEN ( dim_date[Date], _prevStart, _prevEnd ) ),
+    "CurrCost", CALCULATE ( [FX Effective Cost], DATESBETWEEN ( dim_date[Date], _curStart, _curEnd ) ),
+    "PrevQty", CALCULATE ( [FX Consumed Quantity], DATESBETWEEN ( dim_date[Date], _prevStart, _prevEnd ) ),
+    "CurrQty", CALCULATE ( [FX Consumed Quantity], DATESBETWEEN ( dim_date[Date], _curStart, _curEnd ) )
+)
+ORDER BY [CurrCost] DESC

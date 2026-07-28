@@ -1,0 +1,22 @@
+DEFINE
+    VAR _prev = "2026-05"
+    VAR _curr = "2026-06"
+EVALUATE
+TOPN (
+    25,
+    SUMMARIZECOLUMNS (
+        gold_cost_by_resource[ResourceId],
+        gold_cost_by_resource[ResourceName],
+        gold_cost_by_resource[ResourceType],
+        gold_cost_by_resource[ResourceGroupName],
+        gold_cost_by_resource[SubAccountName],
+        gold_cost_by_resource[ServiceName],
+        gold_cost_by_resource[Project],
+        gold_cost_by_resource[Environment],
+        FILTER ( ALL ( gold_cost_by_resource[YearMonth] ), gold_cost_by_resource[YearMonth] = _curr ),
+        "PrevCost", CALCULATE ( [Resource Effective Cost], dim_month[YearMonth] = _prev ),
+        "CurrCost", CALCULATE ( [Resource Effective Cost], dim_month[YearMonth] = _curr )
+    ),
+    [CurrCost], DESC
+)
+ORDER BY [CurrCost] DESC

@@ -1,0 +1,17 @@
+EVALUATE
+TOPN (
+    20,
+    SUMMARIZECOLUMNS (
+        gold_cost_anomalies[Date],
+        gold_cost_anomalies[ServiceName],
+        gold_cost_anomalies[RegionName],
+        gold_cost_anomalies[EffectiveCost],
+        gold_cost_anomalies[RollingMean],
+        gold_cost_anomalies[RollingStdDev],
+        gold_cost_anomalies[ZScore],
+        gold_cost_anomalies[IsAnomaly],
+        gold_cost_anomalies[Severity]
+    ),
+    [ZScore], DESC
+)
+ORDER BY [ZScore] DESC

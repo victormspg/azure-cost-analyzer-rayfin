@@ -1,0 +1,2 @@
+EVALUATE
+TOPN ( 3, SUMMARIZECOLUMNS ( focus_partitioned[ResourceName], "c", [FX Effective Cost] ) )

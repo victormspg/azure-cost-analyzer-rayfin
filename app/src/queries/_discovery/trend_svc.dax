@@ -1,0 +1,3 @@
+EVALUATE
+SUMMARIZECOLUMNS ( dim_month[YearMonth], "Cost", CALCULATE ( [Total Effective Cost], FILTER ( ALL ( gold_cost_summary_monthly[ServiceName] ), gold_cost_summary_monthly[ServiceName] = "Microsoft.Fabric" ) ) )
+ORDER BY dim_month[YearMonth] ASC

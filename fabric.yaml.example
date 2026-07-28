@@ -1,0 +1,13 @@
+# fabric-app-data connection config — MASTER TEMPLATE (repo root).
+# populate-app.ps1 drops this into app/fabric.yaml.example; bootstrap.ps1 copies it to
+# app/fabric.yaml (git-ignored). fabric-app-data auto-discovers `fabric.yaml` from the app root.
+
+activeProfile: default
+profiles:
+  default:
+    semanticModels:
+      aca:
+        # Fabric workspace that hosts the semantic model (GUID).
+        workspaceId: <FABRIC_WORKSPACE_ID>
+        # Semantic model item ID (GUID).
+        itemId: <SEMANTIC_MODEL_ITEM_ID>

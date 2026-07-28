@@ -1,0 +1,14 @@
+// Variance Bridge — Effective Cost change, last complete month vs the month before, by ServiceCategory.
+DEFINE
+    VAR _cur0 = DATE ( YEAR ( TODAY () ), MONTH ( TODAY () ), 1 )
+    VAR _curStart = EDATE ( _cur0, -1 )
+    VAR _curEnd = _cur0 - 1
+    VAR _prevStart = EDATE ( _cur0, -2 )
+    VAR _prevEnd = _curStart - 1
+EVALUATE
+SUMMARIZECOLUMNS (
+    focus_partitioned[ServiceCategory],
+    "PrevCost", CALCULATE ( [FX Effective Cost], DATESBETWEEN ( dim_date[Date], _prevStart, _prevEnd ) ),
+    "CurrCost", CALCULATE ( [FX Effective Cost], DATESBETWEEN ( dim_date[Date], _curStart, _curEnd ) )
+)
+ORDER BY [CurrCost] DESC

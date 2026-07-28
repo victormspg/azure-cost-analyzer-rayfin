@@ -1,0 +1,17 @@
+DEFINE
+    VAR _prev = "2026-05"
+    VAR _curr = "2026-06"
+EVALUATE
+TOPN (
+    8,
+    SUMMARIZECOLUMNS (
+        focus_partitioned[ServiceName],
+        FILTER ( ALL ( focus_partitioned[ServiceCategory] ), focus_partitioned[ServiceCategory] = "Analytics" ),
+        "Prev", CALCULATE ( [FX Effective Cost], dim_date[YearMonth] = _prev ),
+        "Curr", CALCULATE ( [FX Effective Cost], dim_date[YearMonth] = _curr ),
+        "PrevQty", CALCULATE ( [FX Consumed Quantity], dim_date[YearMonth] = _prev ),
+        "CurrQty", CALCULATE ( [FX Consumed Quantity], dim_date[YearMonth] = _curr )
+    ),
+    [Curr], DESC
+)
+ORDER BY [Curr] DESC

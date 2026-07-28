@@ -1,0 +1,16 @@
+EVALUATE
+TOPN (
+    30,
+    SUMMARIZECOLUMNS (
+        gold_cost_by_resource[ResourceId],
+        gold_cost_by_resource[ResourceName],
+        gold_cost_by_resource[ResourceType],
+        gold_cost_by_resource[ResourceGroupName],
+        gold_cost_by_resource[SubAccountName],
+        gold_cost_by_resource[ServiceName],
+        FILTER ( ALL ( gold_cost_by_resource[Project] ), gold_cost_by_resource[Project] = "Untagged" ),
+        "Cost", [Resource Effective Cost]
+    ),
+    [Cost], DESC
+)
+ORDER BY [Cost] DESC

@@ -1,0 +1,4 @@
+// Concentration — Effective Cost by Azure region.
+EVALUATE
+SUMMARIZECOLUMNS ( focus_partitioned[RegionName], "Cost", [FX Effective Cost] )
+ORDER BY [Cost] DESC

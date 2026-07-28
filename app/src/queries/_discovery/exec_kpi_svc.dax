@@ -1,0 +1,6 @@
+EVALUATE
+ROW (
+    "TotalEffectiveCost", CALCULATE ( [Total Effective Cost], TREATAS ( { "2026-06" }, dim_month[YearMonth] ), FILTER ( ALL ( gold_cost_summary_monthly[ServiceName] ), gold_cost_summary_monthly[ServiceName] = "Microsoft.Fabric" ) ),
+    "UntaggedPct", CALCULATE ( [Untagged %], TREATAS ( { "2026-06" }, dim_month[YearMonth] ), FILTER ( ALL ( gold_cost_by_resource[ServiceName] ), gold_cost_by_resource[ServiceName] = "Microsoft.Fabric" ) ),
+    "SavingsPct", CALCULATE ( [Savings %], TREATAS ( { "2026-06" }, dim_month[YearMonth] ), FILTER ( ALL ( gold_cost_summary_monthly[ServiceName] ), gold_cost_summary_monthly[ServiceName] = "Microsoft.Fabric" ) )
+)

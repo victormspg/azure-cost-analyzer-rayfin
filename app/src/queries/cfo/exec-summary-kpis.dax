@@ -1,0 +1,11 @@
+// CFO Executive Summary — KPI cards.
+// Time-intelligence measures (MoM, Last Month) need date context and are
+// computed client-side from the monthly trend query instead.
+EVALUATE
+ROW(
+    "Total Effective Cost", [Total Effective Cost],
+    "Untagged %", [Untagged %],
+    "Total Savings", [Total Savings],
+    "Savings %", [Savings %],
+    "RI Coverage %", [RI Coverage %]
+)

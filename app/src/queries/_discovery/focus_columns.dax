@@ -1,0 +1,7 @@
+// Discover columns of the wide FOCUS fact (richest table in the model).
+EVALUATE
+SELECTCOLUMNS(
+    FILTER( INFO.VIEW.COLUMNS(), [Table] = "gold_cost_focus_monthly" ),
+    "Column", [Name],
+    "Type", [DataType]
+)

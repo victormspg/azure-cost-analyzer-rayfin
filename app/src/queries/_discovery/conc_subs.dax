@@ -1,0 +1,11 @@
+EVALUATE
+TOPN (
+    10,
+    SUMMARIZECOLUMNS (
+        focus_partitioned[SubAccountName],
+        FILTER ( ALL ( focus_partitioned[ServiceName] ), focus_partitioned[ServiceName] = "Microsoft.Fabric" ),
+        "Cost", [FX Effective Cost]
+    ),
+    [Cost], DESC
+)
+ORDER BY [Cost] DESC

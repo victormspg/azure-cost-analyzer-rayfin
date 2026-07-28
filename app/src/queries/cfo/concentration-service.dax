@@ -1,0 +1,8 @@
+// Concentration — top services by Effective Cost (all history in current filter).
+EVALUATE
+TOPN (
+    10,
+    SUMMARIZECOLUMNS ( focus_partitioned[ServiceName], "Cost", [FX Effective Cost] ),
+    [Cost], DESC
+)
+ORDER BY [Cost] DESC

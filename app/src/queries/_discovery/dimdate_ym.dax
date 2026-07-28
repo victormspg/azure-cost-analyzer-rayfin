@@ -1,0 +1,10 @@
+EVALUATE
+TOPN (
+    3,
+    SUMMARIZECOLUMNS (
+        focus_partitioned[ServiceCategory],
+        FILTER ( ALL ( dim_date[YearMonth] ), dim_date[YearMonth] = "2026-06" ),
+        "Cost", [FX Effective Cost]
+    ),
+    [Cost], DESC
+)

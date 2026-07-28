@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "mark": { "type": "line", "point": true, "strokeWidth": 2 },
+  "encoding": {
+    "x": {
+      "field": "YearMonth",
+      "type": "ordinal",
+      "axis": { "title": null, "labelAngle": 0 }
+    },
+    "y": {
+      "field": "Effective Cost",
+      "type": "quantitative",
+      "axis": { "title": null, "format": "$,.0f" }
+    },
+    "tooltip": [
+      { "field": "YearMonth", "type": "ordinal", "title": "Month" },
+      { "field": "Effective Cost", "type": "quantitative", "title": "Cost", "format": "$,.2f" }
+    ]
+  }
+}

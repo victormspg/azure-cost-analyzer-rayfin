@@ -1,0 +1,26 @@
+# RayFin project config — MASTER TEMPLATE (repo root).
+# populate-app.ps1 drops this into app/rayfin/rayfin.yml.example; bootstrap.ps1 copies it to
+# app/rayfin/rayfin.yml (git-ignored). `rayfin up` appends your deployed hosting URL to the
+# local copy only — never commit rayfin.yml.
+
+id: azure-cost-analyzer-app
+name: Azure Cost Analyzer
+version: 1.0.0
+services:
+  auth:
+    enabled: true
+    fabric:
+      enabled: true
+    allowedRedirectUris:
+      - http://localhost:5173
+  data:
+    enabled: false
+  storage:
+    enabled: false
+  staticHosting:
+    enabled: true
+    folder: dist
+    buildCommand: npm run build:fabric
+    indexDocument: index.html
+  functions:
+    enabled: false

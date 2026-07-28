@@ -1,0 +1,10 @@
+EVALUATE
+TOPN (
+    12,
+    ADDCOLUMNS (
+        FILTER ( gold_cost_anomalies, gold_cost_anomalies[EffectiveCost] > 0.1 ),
+        "Dev", gold_cost_anomalies[EffectiveCost] - gold_cost_anomalies[RollingMean]
+    ),
+    [Dev], DESC
+)
+ORDER BY [Dev] DESC

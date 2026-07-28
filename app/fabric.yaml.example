@@ -1,0 +1,14 @@
+# fabric-app-data connection config — TEMPLATE.
+# Copy to `fabric.yaml` (app root, git-ignored) and fill with the shared workspace/model IDs.
+# fabric-app-data auto-discovers `fabric.yaml` from the app root; do NOT move it into a subfolder.
+# The `aca` alias is what the app queries via useSemanticModelQuery({ connection: "aca", ... }).
+
+activeProfile: default
+profiles:
+  default:
+    semanticModels:
+      aca:
+        # Fabric workspace that hosts the semantic model (GUID).
+        workspaceId: <FABRIC_WORKSPACE_ID>
+        # Semantic model item ID (GUID).
+        itemId: <SEMANTIC_MODEL_ITEM_ID>

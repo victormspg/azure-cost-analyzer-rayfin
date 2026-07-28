@@ -1,0 +1,7 @@
+EVALUATE
+VAR _pc = SELECTCOLUMNS(VALUES(focus_partitioned[PricingCategory]), "Dim", "PricingCategory", "Value", focus_partitioned[PricingCategory])
+VAR _ps = SELECTCOLUMNS(VALUES(focus_partitioned[PricingSubcategory]), "Dim", "PricingSubcategory", "Value", focus_partitioned[PricingSubcategory])
+VAR _cc = SELECTCOLUMNS(VALUES(focus_partitioned[ChargeCategory]), "Dim", "ChargeCategory", "Value", focus_partitioned[ChargeCategory])
+VAR _cf = SELECTCOLUMNS(VALUES(focus_partitioned[ChargeFrequency]), "Dim", "ChargeFrequency", "Value", focus_partitioned[ChargeFrequency])
+VAR _cd = SELECTCOLUMNS(VALUES(focus_partitioned[CommitmentDiscountType]), "Dim", "CommitmentDiscountType", "Value", focus_partitioned[CommitmentDiscountType])
+RETURN UNION(_pc, _ps, _cc, _cf, _cd)

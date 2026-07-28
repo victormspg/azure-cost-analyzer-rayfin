@@ -1,0 +1,9 @@
+// Schema discovery — list all measures in the connected model with their table, folder and format.
+EVALUATE
+SELECTCOLUMNS(
+    INFO.VIEW.MEASURES(),
+    "Measure", [Name],
+    "Table", [Table],
+    "Folder", [DisplayFolder],
+    "Format", [FormatString]
+)

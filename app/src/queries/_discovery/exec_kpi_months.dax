@@ -1,0 +1,8 @@
+DEFINE
+    VAR _months = TREATAS ( { "2026-05", "2026-06" }, dim_month[YearMonth] )
+EVALUATE
+ROW (
+    "TotalEffectiveCost", CALCULATE ( [Total Effective Cost], _months ),
+    "UntaggedPct", CALCULATE ( [Untagged %], _months ),
+    "SavingsPct", CALCULATE ( [Savings %], _months )
+)

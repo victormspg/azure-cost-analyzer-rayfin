@@ -1,0 +1,6 @@
+EVALUATE
+SUMMARIZECOLUMNS (
+    gold_cost_by_resource[Project],
+    "Cost", [Resource Effective Cost]
+)
+ORDER BY [Cost] DESC

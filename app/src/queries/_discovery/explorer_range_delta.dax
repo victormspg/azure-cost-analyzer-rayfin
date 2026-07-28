@@ -1,0 +1,5 @@
+EVALUATE
+ROW (
+    "Prev", CALCULATE ( [Resource Effective Cost], FILTER ( ALL ( gold_cost_by_resource[ServiceCategory] ), gold_cost_by_resource[ServiceCategory] IN { "Storage", "Compute" } ), gold_cost_by_resource[YearMonth] = "2026-05" ),
+    "Curr", CALCULATE ( [Resource Effective Cost], FILTER ( ALL ( gold_cost_by_resource[ServiceCategory] ), gold_cost_by_resource[ServiceCategory] IN { "Storage", "Compute" } ), gold_cost_by_resource[YearMonth] = "2026-06" )
+)

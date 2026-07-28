@@ -1,0 +1,9 @@
+EVALUATE
+ROW (
+    "Total",
+    CALCULATE (
+        [Resource Effective Cost],
+        FILTER ( ALL ( gold_cost_by_resource[ServiceCategory] ), gold_cost_by_resource[ServiceCategory] = "Analytics" ),
+        FILTER ( ALL ( gold_cost_by_resource[YearMonth] ), gold_cost_by_resource[YearMonth] IN { "2026-06" } )
+    )
+)

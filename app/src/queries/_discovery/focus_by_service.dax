@@ -1,0 +1,9 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    focus_partitioned[ServiceCategory],
+    "Effective", [FX Effective Cost],
+    "Qty", [FX Consumed Quantity],
+    "AvgUnitPrice", [FX Avg Effective Unit Price],
+    "DiscountCapture", [FX Discount Capture %]
+)
+ORDER BY [Effective] DESC

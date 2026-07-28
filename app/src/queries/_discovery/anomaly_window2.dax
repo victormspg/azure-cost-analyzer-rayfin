@@ -1,0 +1,18 @@
+DEFINE
+    VAR _end = DATE ( 2026, 5, 29 )
+    VAR _start = _end - 6
+EVALUATE
+TOPN (
+    8,
+    SUMMARIZECOLUMNS (
+        focus_partitioned[SkuMeterName],
+        focus_partitioned[ResourceGroupName],
+        focus_partitioned[SubAccountName],
+        FILTER ( ALL ( focus_partitioned[ServiceName] ), focus_partitioned[ServiceName] = "Microsoft.Fabric" ),
+        FILTER ( ALL ( focus_partitioned[RegionName] ), focus_partitioned[RegionName] = "West US 3" ),
+        "Cost", CALCULATE ( [FX Effective Cost], DATESBETWEEN ( dim_date[Date], _start, _end ) ),
+        "Qty", CALCULATE ( [FX Consumed Quantity], DATESBETWEEN ( dim_date[Date], _start, _end ) )
+    ),
+    [Cost], DESC
+)
+ORDER BY [Cost] DESC

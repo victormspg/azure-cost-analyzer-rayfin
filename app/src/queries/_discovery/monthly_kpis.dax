@@ -1,0 +1,8 @@
+EVALUATE
+SUMMARIZECOLUMNS (
+    dim_month[YearMonth],
+    "Cost", [Total Effective Cost],
+    "Untagged", [Untagged %],
+    "Savings", [Savings %]
+)
+ORDER BY dim_month[YearMonth] ASC

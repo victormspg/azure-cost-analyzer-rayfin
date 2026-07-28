@@ -1,0 +1,7 @@
+EVALUATE
+TOPN (
+    15,
+    FILTER ( gold_cost_anomalies, gold_cost_anomalies[IsAnomaly] = TRUE () ),
+    gold_cost_anomalies[ZScore], DESC
+)
+ORDER BY gold_cost_anomalies[ZScore] DESC

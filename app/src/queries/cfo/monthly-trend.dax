@@ -1,0 +1,7 @@
+// Monthly trend of Total Effective Cost for the sparkline/line chart.
+EVALUATE
+SUMMARIZECOLUMNS(
+    dim_month[YearMonth],
+    "Effective Cost", [Total Effective Cost]
+)
+ORDER BY dim_month[YearMonth] ASC

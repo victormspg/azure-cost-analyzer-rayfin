@@ -1,0 +1,7 @@
+EVALUATE
+SUMMARIZECOLUMNS (
+    gold_chargeback_by_tag[ChargebackDimension],
+    gold_chargeback_by_tag[ChargebackKey],
+    "Cost", SUM ( gold_chargeback_by_tag[EffectiveCost] )
+)
+ORDER BY [Cost] DESC

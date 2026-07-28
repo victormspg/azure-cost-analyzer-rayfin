@@ -1,0 +1,7 @@
+EVALUATE
+ROW(
+    "Rows", COUNTROWS(focus_partitioned),
+    "EffCost", SUM(focus_partitioned[EffectiveCost]),
+    "ListCost", SUM(focus_partitioned[ListCost]),
+    "Qty", SUM(focus_partitioned[ConsumedQuantity])
+)
