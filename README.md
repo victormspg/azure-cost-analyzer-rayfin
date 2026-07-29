@@ -11,12 +11,18 @@ cost data — conformed to the **FOCUS 1.0** specification — into clear, every
 
 ## The problem
 
-Cloud cost is opaque. Finance and platform teams struggle to answer three basic questions:
+Every month, the Azure bill arrives — and the room goes quiet. It's bigger than last month, but
+**nobody can fully explain why, who owns it, or what to do about it.** The answers are in the data,
+buried in raw billing exports that only a spreadsheet expert can decode — so the questions that
+matter most go unanswered:
 
-- **Who owns this spend?** A large share of resources is **untagged**, so cost can't be attributed
-  to a team or project for chargeback.
-- **Why did it change?** Month-over-month swings are hard to explain — was it **usage** or **rate**?
-- **Where can we save?** Savings, anomalies, and waste are buried in raw billing exports.
+- **Who owns this spend?** Much of it is **untagged**, so it can't be charged back to a team or project.
+- **Why did it change?** Real **usage**, or just a price **rate** change? No one's quite sure.
+- **Where can we save?** Commitments, waste, and anomalies hide in plain sight.
+
+Cloud cost shouldn't be a mystery. **Azure Cost Analyzer turns raw billing data into clear answers
+in seconds** — attribute every dollar, explain every change, surface every saving — and lets anyone
+just *ask*.
 
 ## Who it's for
 
