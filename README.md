@@ -4,7 +4,7 @@ A deployable **FinOps analytics app** built on **Microsoft Fabric (RayFin)** tha
 cost data — conformed to the **FOCUS 1.0** specification — into clear, everyday answers, plus a
 **FinOps Assistant** you can just ask in plain language.
 
-> 🎥 **Demo video:** https://youtu.be/fh-smnQ-vTA
+> 🎥 **Demo video:** [Watch the demo (~1.5 min) ▶](https://youtu.be/fh-smnQ-vTA)
 > 🔒 **Credential-free by design** — no workspace/model IDs, tenant, endpoints, or keys are committed.
 
 ---
